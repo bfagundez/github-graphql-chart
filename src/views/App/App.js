@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import GraphQLApi from 'services/gitGraphQL'
 import './app.scss'
 
 class App extends Component {

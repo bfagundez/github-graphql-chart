@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import GraphQLApi from 'services/gitGraphQL'
 import ChartContainer from 'components/ChartContainer'
+import UserPicker from 'components/UserPicker'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import './app.scss'
 
 export class App extends Component {
   componentWillMount () {
+
     this.store = this.props.store
     this.onfetchGitData()
   }
@@ -35,6 +37,7 @@ export class App extends Component {
     return (
       <div styleName='App'>
         <p> Volume of Files Changed by Date </p>
+        <UserPicker currentUser='bfagundez' onFetchUserData={this.onfetchGitData} />
         {loading}
         {scatterPlot}
       </div>

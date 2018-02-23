@@ -24,7 +24,8 @@
     "redux-multi": "0.1.91",
     "redux-promise": "0.5.3",
     "redux-promise-middleware": "5.0.0",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "sinon": "4.3.0"
   },
   "scripts": {
     "start": "webpack-dashboard -c cyan -- react-scripts start",

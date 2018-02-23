@@ -8,7 +8,6 @@ import './app.scss'
 
 export class App extends Component {
   componentWillMount () {
-
     this.store = this.props.store
     this.onfetchGitData()
   }

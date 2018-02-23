@@ -6,6 +6,31 @@ export default class GraphQLApi {
           query: user(login: "${user}") {
             avatarUrl
             location
+            repositories(first: 5, affiliations: OWNER) {
+              edges {
+                node {
+                  name
+                  ref(qualifiedName: "master") {
+                    target {
+                      ... on Commit {
+                        id
+                        history(first: 50) {
+                          pageInfo {
+                            hasNextPage
+                          }
+                          edges {
+                            node {
+                              committedDate
+                              changedFiles
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }`
 
